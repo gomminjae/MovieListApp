@@ -16,30 +16,33 @@ protocol apiCompose {
 enum boxOfficeAPI {
     case movies(order_type: Int)
     case movie(id: String)
-    case comments(id: String)
+    case comments(movie_id: String)
 }
 
 extension boxOfficeAPI: apiCompose {
+    
    var baseUrl: URL {
-          guard let url = URL(string: "http://connect-boxoffice.run.goorm.io/") else { fatalError("Invalid URL") }
+          guard let url = URL(string: "http://connect-boxoffice.run.goorm.io/") else {
+            fatalError("Invalid URL") }
           return url
       }
     var subUrl: String {
-        switch self {
-        case .movies(let order_type):
-            return "movies?order_type=\(order_type)"
-        case .movie(let id):
-            return "movie?id=\(id)"
-        case .comments(id: let id):
-            return "comments?movie_id=\(id)"
+            switch self {
+            case .movies(let order_type):
+                return "movies?order_type=\(order_type)"
+            case .movie(let movie_id):
+                return "movie?id=\(movie_id)"
+            case .comments(let movie_id):
+                return "comments?movie_id=\(movie_id)"
+            }
         }
-    }
 }
 
 class APIService<Service: apiCompose> {
+    
     let statusCode = StatusCodeResponse()
     
-    func request(_ server: Service, completion: @escaping (_ data: Data?,_ response: URLResponse?, _ code: String) -> ()) {
+    func request(_ server: Service, completion: @escaping (_ data: Data?,_ response: URLResponse?, _ code: String) -> (Void)) {
         guard let url = URL(string: server.baseUrl.absoluteString + server.subUrl) else { return }
         
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in

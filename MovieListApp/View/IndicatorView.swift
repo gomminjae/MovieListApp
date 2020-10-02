@@ -10,7 +10,7 @@ import UIKit
 
 class IndicatorView: UIView {
     
-    @IBOutlet weak var indicatorView: UIActivityIndicatorView!
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -23,7 +23,7 @@ class IndicatorView: UIView {
     
     
     private func commonInit() {
-        guard let view = Bundle.main.loadNibNamed(IndicatorView.reusableIdentifier, owner: self, options: nil)?.first as? UIView else { return }
+        let view = Bundle.main.loadNibNamed(IndicatorView.reusableIdentifier, owner: self, options: nil)?.first as! UIView 
         view.frame = self.bounds
         view.center = self.center
         view.clipsToBounds = true

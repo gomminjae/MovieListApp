@@ -35,9 +35,10 @@ extension DataLoading where Self: UIViewController {
         switch loadingState {
         case .loading:
             indicatorView.center = view.center
-            indicatorView.indicatorView.startAnimating()
+            indicatorView.indicator.startAnimating()
+            view.addSubview(indicatorView)
         case .loaded:
-            indicatorView.indicatorView.stopAnimating()
+            indicatorView.indicator.stopAnimating()
             indicatorView.removeFromSuperview()
         case .refreshed:
             refreshControl.endRefreshing()

@@ -25,6 +25,7 @@ class CollectionViewController: UIViewController, DataLoading {
     
     var indicatorView: IndicatorView = {
         let view = IndicatorView()
+        view.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
         return view
     }()
     
@@ -50,6 +51,9 @@ class CollectionViewController: UIViewController, DataLoading {
         
         setupCollectionView()
         collectionViewLayout()
+        
+        view.addSubview(indicatorView)
+        
         
         orderTypeButton.addTarget(self, action: #selector(orderTypeButtonTapped), for: .touchUpInside)
         refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
@@ -82,6 +86,7 @@ class CollectionViewController: UIViewController, DataLoading {
             
             if let index = sender as? Int {
                 vc.movieId = movies[index].id
+                vc.movieTitle = movies[index].title
                 vc.movieImage = posters?[index]
             }
             
@@ -111,11 +116,6 @@ class CollectionViewController: UIViewController, DataLoading {
         alert.addAction(cancel)
         
         self.present(alert, animated: true, completion: nil)
-    }
-    
-    func safe(_ data: String?) -> String {
-        guard let unlock = data else { return ""}
-        return unlock
     }
     fileprivate func getMoviesFromServer(_ orderType: Int) {
         APImanager.getMovies(orderType) { (movies, code) in

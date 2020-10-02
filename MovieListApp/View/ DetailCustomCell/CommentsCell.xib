@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="91" id="KGk-i7-Jjw" customClass="CommentsCell" customModule="MovieListApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="389" height="91"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="389" height="91"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PxD-s2-jJg">
+                        <rect key="frame" x="139" y="0.0" width="230" height="20.5"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wAR-Ps-C09">
+                        <rect key="frame" x="139" y="20.5" width="230" height="16"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U85-mt-8Kg">
+                        <rect key="frame" x="139" y="38" width="230" height="42"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="TyC-0W-a2d">
+                        <rect key="frame" x="20" y="1.5" width="88" height="70"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="PxD-s2-jJg" secondAttribute="trailing" constant="20" id="3gA-Fs-hcb"/>
+                    <constraint firstAttribute="bottom" secondItem="TyC-0W-a2d" secondAttribute="bottom" constant="18.5" id="6GT-lH-c6p"/>
+                    <constraint firstAttribute="trailing" secondItem="TyC-0W-a2d" secondAttribute="trailing" constant="281" id="JuZ-sT-kQl"/>
+                    <constraint firstItem="wAR-Ps-C09" firstAttribute="leading" secondItem="U85-mt-8Kg" secondAttribute="trailing" constant="-230" id="L4v-En-gtz"/>
+                    <constraint firstItem="U85-mt-8Kg" firstAttribute="top" secondItem="wAR-Ps-C09" secondAttribute="bottom" constant="1.5" id="MFf-K9-5rf"/>
+                    <constraint firstItem="wAR-Ps-C09" firstAttribute="top" secondItem="PxD-s2-jJg" secondAttribute="bottom" id="Owd-GT-DcT"/>
+                    <constraint firstItem="TyC-0W-a2d" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="RiU-84-SAZ"/>
+                    <constraint firstItem="PxD-s2-jJg" firstAttribute="leading" secondItem="wAR-Ps-C09" secondAttribute="trailing" constant="-230" id="SL0-OS-vop"/>
+                    <constraint firstItem="U85-mt-8Kg" firstAttribute="leading" secondItem="TyC-0W-a2d" secondAttribute="trailing" constant="31" id="USR-vg-wFD"/>
+                    <constraint firstItem="TyC-0W-a2d" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="aMf-B3-gsK"/>
+                    <constraint firstItem="TyC-0W-a2d" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="eyU-aJ-mnv"/>
+                    <constraint firstAttribute="trailing" secondItem="U85-mt-8Kg" secondAttribute="trailing" constant="20" id="iYe-0j-4a3"/>
+                    <constraint firstItem="PxD-s2-jJg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="nJV-zA-RwW"/>
+                    <constraint firstItem="wAR-Ps-C09" firstAttribute="leading" secondItem="TyC-0W-a2d" secondAttribute="trailing" constant="31" id="qA8-GF-Nv6"/>
+                    <constraint firstItem="PxD-s2-jJg" firstAttribute="leading" secondItem="TyC-0W-a2d" secondAttribute="trailing" constant="31" id="sM5-7V-61W"/>
+                    <constraint firstAttribute="bottom" secondItem="U85-mt-8Kg" secondAttribute="bottom" constant="11" id="vsZ-Nr-uOi"/>
+                    <constraint firstAttribute="trailing" secondItem="wAR-Ps-C09" secondAttribute="trailing" constant="20" id="zVZ-3I-NEt"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="commentLabel" destination="U85-mt-8Kg" id="ZZN-8E-OJY"/>
+                <outlet property="dateLabel" destination="wAR-Ps-C09" id="m7E-xD-vqJ"/>
+                <outlet property="userName" destination="PxD-s2-jJg" id="PCo-AX-jZR"/>
+            </connections>
+            <point key="canvasLocation" x="25.362318840579711" y="-78.013392857142847"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="person" catalog="system" width="128" height="117"/>
+    </resources>
+</document>

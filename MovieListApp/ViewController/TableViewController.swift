@@ -23,6 +23,7 @@ class TableViewController: UIViewController, DataLoading {
     
     var indicatorView: IndicatorView = {
         let view = IndicatorView()
+        view.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
         return view
     }()
     var loadingState: LoadingState = .loading {
@@ -50,6 +51,9 @@ class TableViewController: UIViewController, DataLoading {
         super.viewDidLoad()
         
         setupTableView()
+        
+        view.addSubview(indicatorView)
+        
         orderTypeButton.addTarget(self, action: #selector(orderTypeButtonTapped), for: .touchUpInside)
         refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
         
@@ -73,6 +77,7 @@ class TableViewController: UIViewController, DataLoading {
             
             if let index = sender as? Int {
                 vc.movieId = movies[index].id
+                vc.movieTitle = movies[index].title
                 vc.movieImage = posters?[index]
             }
             
@@ -102,11 +107,6 @@ class TableViewController: UIViewController, DataLoading {
         alert.addAction(cancel)
         
         self.present(alert, animated: true, completion: nil)
-    }
-    
-    func safe(_ data: String?) -> String {
-        guard let unlock = data else { return ""}
-        return unlock
     }
     fileprivate func getMoviesFromServer(_ orderType: Int) {
         APImanager.getMovies(orderType) { (movies, code) in
