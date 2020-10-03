@@ -19,8 +19,8 @@
 </div>
 
 ## Issue
-- ** DetailViewController에서 ViewDidLoad가 호출되었을때 getDetail과 getComment를 실행 -> 정상적으로 api데이터가 넘어오지 않음 
+- **DetailViewController에서 ViewDidLoad가 호출되었을때 getDetail과 getComment를 실행 -> 정상적으로 api데이터가 넘어오지 않음**
 해결: DispatchGroup을 사용하여 순차적으로 네트워킹을 실행함 (enter(), leave()를 사용) notify를 사용하였음 -> 정상적으로 데이터가 넘어옴 (추후 정확하게 이 문제에 대하여 공부를 해볼예정)
 
-- ** api에 넘어오늘 데이터들이 다 옵셔널 타입으로 넘어오게해서 하나씩 옵셔널타입을 풀어줘야했음 
+- **api에 넘어오늘 데이터들이 다 옵셔널 타입으로 넘어오게해서 하나씩 옵셔널타입을 풀어줘야했음**
 해결: UIViewController에 옵셔널 타입을 풀어주는 함수 (safe())를 extension하여서 만들었음 
